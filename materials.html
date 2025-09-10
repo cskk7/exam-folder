@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #00b09b, #96c93d);
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -37,13 +37,40 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      text-align: center;
+      justify-content: flex-start;
+      font-size: 1.2rem;
+      padding: 20px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 600px;
+      width: 100%;
+    }
+    ul li {
+      background: rgba(255,255,255,0.2);
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+    ul li:hover {
+      background: rgba(255,255,255,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    }
+    ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    ul li a:hover {
+      text-decoration: underline;
     }
     .home-btn {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 30px;
       padding: 12px 25px;
       background: rgba(255,255,255,0.2);
       color: #fff;
@@ -78,7 +105,13 @@
   </nav>
 
   <main>
-    <p>Access important study materials and guides for your exams here.</p>
+    <p>Click on the links below to access your study materials:</p>
+    <ul>
+      <li><a href="https://drive.google.com/file/d/XXXXX/view" target="_blank">General Knowledge Notes (PDF)</a></li>
+      <li><a href="https://drive.google.com/file/d/YYYYY/view" target="_blank">Maths Practice Workbook</a></li>
+      <li><a href="https://drive.google.com/file/d/ZZZZZ/view" target="_blank">Previous Year Solved Papers</a></li>
+      <li><a href="https://drive.google.com/file/d/AAAAA/view" target="_blank">Current Affairs Compilation</a></li>
+    </ul>
     <a href="index.html" class="home-btn">⬅ Back to Home</a>
   </main>
 
