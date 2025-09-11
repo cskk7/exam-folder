@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Geography Practice Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .options label {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    #result {
+      margin-top: 30px;
+      padding: 20px;
+      background: #ecf0f1;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Geography Practice Test</h1>
+  <form id="quizForm"></form>
+  <button type="button" onclick="submitQuiz()">Submit Test</button>
+  <div id="result"></div>
+
+  <script>
+    const quizData = [
+      {q:"The north-south extent of India is", options:["2,500 km","2,933 km","3,214 km","2,814 km"], answer:2},
+      {q:"The southern most point of India is", options:["Andaman","Kanyakumari","Indira point","Kavaratu"], answer:1},
+      {q:"The extent of Himalayas in the east-west is about", options:["2,500 km","2,400 km","800 km","2,200 km"], answer:0},
+      {q:"_______ river is known as 'Sorrow of Bihar'", options:["Narmada","Godavari","Kosi","Damodar"], answer:2},
+      {q:"Deccan plateau covers an area of about ________ sq.km.", options:["8 lakh","6 lakh","5 lakh","7 lakh"], answer:3},
+      {q:"The highest peak in South India is", options:["Ooty","Kodaikanal","Anaimudi","Jindhagada"], answer:2},
+      {q:"___________ plains are formed by the older alluviums.", options:["Bhabar","Tarai","Bhangar","Khadar"], answer:2},
+      {q:"The total length of the coast line in India including the islands is ________ km.", options:["7516.6 km","7625.6 km","7526.6 km","7626.6 km"], answer:0},
+      {q:"India has been politically divided into ________ states and ________ union territories.", options:["27,9","28,7","28,8","30,7"], answer:2},
+      {q:"The _______ river divides the plateau region of India broadly into two parts.", options:["Kaveri","Narmada","Tapti","Mahanadi"], answer:1},
+      {q:"Dihang is a gorge in ________", options:["Assam","Meghalaya","Nagaland","Arunachal Pradesh"], answer:3},
+      {q:"The soil which is rich in iron oxides is", options:["Alluvial","Black","Red","Alkaline"], answer:2},
+      {q:"__________ dam is the highest gravity dam in India.", options:["Hirakud","Bhakra Nangal","Mettur","Nagarjuna sagar"], answer:1},
+      {q:"Black soils are also called as ___________", options:["Arid soils","Saline soils","Regur soils","Mountain soils"], answer:2},
+      {q:"The longest dam in the world is", options:["Mettur","Kosi","Hirakud","Bhakra Nangal"], answer:2},
+      {q:"The state which leads in the production of coffee is", options:["West Bengal","Karnataka","Odisha","Punjab"], answer:1},
+      {q:"The Anthracite coal has _________", options:["80 to 95% Carbon","above 70% Carbon","60 to 70% Carbon","Below 50% Carbon"], answer:0},
+      {q:"___________ stands first in the reserves of bauxite in India.", options:["Bihar","Gujarat","Odisha","Rajasthan"], answer:2},
+      {q:"The first nuclear power station was setup at ________ near Mumbai in 1969.", options:["Kalpakkam","Kanga","Rawatbhata","Tarapur"], answer:3},
+      {q:"The length of Golden Quadrilateral superhighways in India is", options:["5846 km","5847 km","5849 km","5800 km"], answer:0},
+      {q:"Isohyets is a line joining places having equal", options:["temperature","rainfall","cloud cover","sunshine"], answer:1},
+      {q:"The highest peak of Aravalli hills", options:["Gurushikar","Mahendragiri","Amarkantak","Anaimudi"], answer:0},
+      {q:"The ________ range is the oldest mountain system in India.", options:["Aravalli","Ladakh","Karakoram","Vindhyas"], answer:0},
+      {q:"Many million years ago, India was a part of the supercontinent.", options:["Gondwana","Laurasia","Panthalasa","Pangea"], answer:0},
+      {q:"The movement of plates that creates stress and tension in the rocks causing them to crack results in", options:["Fold","Fault","Mountain","Earthquake"], answer:1},
+      {q:"Mt. Fuji is a dormant volcano", options:["True","False"], answer:0},
+      {q:"Mountain ranges are formed by tectonic plate collision. Plate movement is due to thermal energy.", options:["Both True","Both False","Only I True","Only II True"], answer:0},
+      {q:"The process of the levelling up of land by means of natural agents is", options:["Aggradation","Degradation","Gradation","None"], answer:2},
+      {q:"Which one is not a depositional feature of a glacier?", options:["Cirque","Moraines","Drumlins","Eskers"], answer:0},
+      {q:"‘I’ shaped valley is river erosional, ‘U’ shaped valley is glacier erosional.", options:["True","False"], answer:0},
+      {q:"Limestone regions have less underground water because water does not percolate. Correct?", options:["Both wrong","Both correct","Statement right, Reason wrong","Statement wrong, Reason right"], answer:0},
+      {q:"All types of clouds are found in the", options:["Troposphere","Ionosphere","Mesosphere","Exosphere"], answer:0},
+      {q:"The Monsoons are", options:["Prevailing winds","Periodic winds","Local winds","None"], answer:1},
+      {q:"Dew in the form of ice crystals is called", options:["Frost","Fog","Mist","Sleet"], answer:0},
+      {q:"The Sunda Trench lies in the", options:["Atlantic","Pacific","Indian","Antarctic"], answer:2},
+      {q:"The oceanic ridge comes into existence due to", options:["Convergence","Divergence","Lateral movement","Shearing"], answer:1},
+      {q:"Which of the following is not correctly matched?", options:["Gulf Stream – Pacific","Labrador – Atlantic","Canary – Mediterranean","Mozambique – Indian"], answer:0},
+      {q:"The coldest biome on Earth is", options:["Tundra","Taiga","Desert","Oceans"], answer:0},
+      {q:"The smallest unit of biosphere is", options:["Ecosystem","Biome","Environment","None"], answer:0},
+      {q:"The southernmost tip of Africa is", options:["Cape Blanca","Cape Agulhas","Cape of Good Hope","Cape Town"], answer:2},
+      {q:"The manmade canal through Egypt is", options:["Panama","Aswan","Suez","Albert"], answer:2},
+      {q:"The range which separates west and east flowing rivers in Australia is", options:["Great Dividing","Himalayan","Flinders","MacDonnell"], answer:0},
+      {q:"Fossils are found in", options:["Sedimentary","Igneous","Metamorphic","Plutonic"], answer:0},
+      {q:"The subject which deals with map making is", options:["Demography","Cartography","Physiography","Topography"], answer:1},
+      {q:"Which is one of the first metals known by man?", options:["Iron","Copper","Gold","Silver"], answer:1},
+      {q:"The magnitude of earthquake is measured by", options:["Seismograph","Richter","Mercalli","Rotameter"], answer:1},
+      {q:"________ Volcano is known as light house of Mediterranean Sea.", options:["Stromboli","Krokota","Fujiyama","Kilimanjaro"], answer:0},
+      {q:"________ belt is known as the 'Ring of Fire'.", options:["Circum-Pacific","Mid-Atlantic","Mid-Continental","Antarctic"], answer:0},
+      {q:"Which is not the Western margin of Asia?", options:["Black Sea","Mediterranean","Red Sea","Arabian Sea"], answer:3}
+    ];
+
+    // Render questions
+    const quizForm = document.getElementById("quizForm");
+    quizData.forEach((item, index) => {
+      const div = document.createElement("div");
+      div.className = "question";
+      div.innerHTML = `<p><b>Q${index+1}.</b> ${item.q}</p>`;
+      const opts = document.createElement("div");
+      opts.className = "options";
+      item.options.forEach((opt, i) => {
+        const id = `q${index}_${i}`;
+        opts.innerHTML += `
+          <label><input type="radio" name="q${index}" value="${i}"> ${String.fromCharCode(65+i)}. ${opt}</label>
+        `;
+      });
+      div.appendChild(opts);
+      quizForm.appendChild(div);
+    });
+
+    // Submit quiz
+    function submitQuiz() {
+      let correct=0, wrong=0, left=0;
+      quizData.forEach((item, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if(!selected) {
+          left++;
+        } else if(parseInt(selected.value) === item.answer) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+      const total = quizData.length;
+      const score = correct*1 - wrong*0.25;
+      const accuracy = ((correct/ (correct+wrong || 1))*100).toFixed(2);
+
+      document.getElementById("result").innerHTML = `
+        <h2>Analysis</h2>
+        ✅ Correct: ${correct}<br>
+        ❌ Wrong: ${wrong}<br>
+        ⏳ Left: ${left}<br>
+        🎯 Accuracy: ${accuracy}%<br>
+        📊 Total Score: ${score} / ${total}
+      `;
+    }
+  </script>
+</body>
+</html>
