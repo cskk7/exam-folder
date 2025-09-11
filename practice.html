@@ -2,93 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Practice Test - Puducherry Exams Preparations</title>
+  <title>Practice Tests</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #43cea2, #185a9d);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      padding: 0;
+      color: #333;
     }
     header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
       padding: 20px;
-      text-align: center;
-      background: rgba(0,0,0,0.3);
     }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px;
+    .section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: background 0.3s ease;
+    .section h2 {
+      margin-top: 0;
+      color: #2c3e50;
     }
-    nav a:hover {
-      background: rgba(255,255,255,0.2);
+    ul {
+      list-style: none;
+      padding: 0;
     }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      text-align: center;
+    li {
+      margin: 10px 0;
     }
-    .home-btn {
+    a {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: rgba(255,255,255,0.2);
-      color: #fff;
-      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
+      padding: 10px 15px;
+      background: #3498db;
+      color: #fff;
+      border-radius: 6px;
+      transition: background 0.3s;
     }
-    .home-btn:hover {
-      background: rgba(255,255,255,0.4);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    a:hover {
+      background: #2980b9;
     }
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: rgba(0,0,0,0.2);
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      a {
+        display: block;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Practice Test</h1>
+    <h1>Practice Tests</h1>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="practice.html">Practice Test</a>
-    <a href="previous.html">Previous Year Questions</a>
-    <a href="materials.html">Study Materials</a>
-    <a href="notes.html">Class Notes</a>
-  </nav>
+  <div class="container">
+    <!-- Subject Test Section -->
+    <div class="section">
+      <h2>📘 Subject Tests</h2>
+      <ul>
+        <li><a href="#">History (Coming Soon)</a></li>
+        <li><a href="geography_test.html" target="_blank">Geography</a></li>
+        <li><a href="#">Polity (Coming Soon)</a></li>
+      </ul>
+    </div>
 
-  <main>
-    <p>Here you can attempt practice tests for your exam preparation.</p>
-    <a href="index.html" class="home-btn">⬅ Back to Home</a>
-  </main>
+    <!-- Mini Test Section -->
+    <div class="section">
+      <h2>📝 Mini Tests</h2>
+      <ul>
+        <li><a href="#">Mini Test 1</a></li>
+        <li><a href="#">Mini Test 2</a></li>
+      </ul>
+    </div>
 
-  <footer>
-    © 2025 Puducherry Exam Prep
-  </footer>
+    <!-- Full Mock Test Section -->
+    <div class="section">
+      <h2>📊 Full Mock Tests</h2>
+      <ul>
+        <li><a href="#">Mock Test 1</a></li>
+        <li><a href="#">Mock Test 2</a></li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>
