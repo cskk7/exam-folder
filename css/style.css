@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puducherry Exams Preparations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Puducherry Exams Preparations</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="practice.html">Practice Test</a>
+      <a href="previous.html">Previous Year Questions</a>
+      <a href="materials.html">Study Materials</a>
+      <a href="notes.html">Class Notes</a>
+      <a href="syllabus.html">Syllabus</a>
+      <a href="rapid.html">Rapid Revision</a>
+      <a href="detailed.html">Detailed Revision</a>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero">
+      <h2>Welcome to Puducherry Exam Preparation Portal</h2>
+      <p>Your one-stop platform for SSC, UPSC, and all competitive exams.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Puducherry Exam Preparations. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
